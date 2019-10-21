@@ -17,6 +17,8 @@
 @import 'normalize.scss';
 
 // === Mixins ===
+
+
 @mixin color-nav {
     background-color: #1D1D1D;
     opacity: .9;
@@ -49,20 +51,45 @@
 // === / Mixins ===
 
 // === Variables ===
+$icon-blue: #5ecae6;
+$icon-green: #bed431;
+$icon-yellow: #f6c715;
+$icon-red: #e21e25;
 $color-white: #fff;
 $color-gray: #c4c4c4;
 $color-black: #0c0c0c;
 $color-yellow: #f6c715;
+$color-red: #fe4419;
+$bg-gray: #222222;
 $main-text: #ccc;
+
+$discovery-colors: (
+ flask           : $icon-blue,
+ phone           : $icon-green,
+ skull           : $icon-yellow,
+ desktop         : $icon-red
+);
 // === / Variables ===
 * {
     box-sizing: border-box;
     font-family:"MyFont";
 }
+h1 {
+    font-family:"MyFont";
+    @include upper;
+    text-align: center;
+    font-weight: 600;
+}
+section {
+   min-height: 100vh;
+}
+.red {
+    background-color: $color-red;
+}
 .header{
     background-image: url('../images/header-background.jpg');
     @include parallax;
-    height: 100vh;
+    
     text-align: center;
     @include upper;
     &-nav{
@@ -81,6 +108,11 @@ $main-text: #ccc;
         display: block;
         font-weight: 300;
     }
+    @media screen and (max-width:900px) { 
+        .hide {
+            display: none;
+        }
+    }
     h2{
         font-family:"MyFont";
         @include upper;
@@ -93,12 +125,9 @@ $main-text: #ccc;
         @include shadow-text;
     }
     h1 {
-        font-family:"MyFont";
-        text-align: center;
+        
         padding: 0 20px;
-        line-height: 80px;
         margin: 0 0 40px;
-        @include upper;
         @include shadow-text;
         @include main-header;
         color: $color-white;
@@ -135,6 +164,10 @@ $main-text: #ccc;
 .heading-main {
     color: $color-yellow;
     @include main-header;
+    &--red {
+        color: $color-red;
+
+    }
 }
     .heading-second {
         color: $main-text;
@@ -151,7 +184,106 @@ $main-text: #ccc;
    line-height: 30px;
 }
 
-.doughnut {
-    width: 200px;
-    height: 200px;
+// ===/Experience ===
+
+// === Discovery ===
+
+.discovery {
+    background-color: $bg-gray;
+    color: $color-gray;
+    text-align: center;
+    &-header {
+        @each $theme, $color in $discovery-colors {
+            &--#{$theme} {
+              color: $color;
+            }
+        }
+
+    }
+    &-icon {
+       
+        @each $theme, $color in $discovery-colors {
+            &--#{$theme} {
+              color: $color;
+              font-size: 42px;
+              margin: 30px 0 0 0;
+            }
+        }
+
+    }
+
 }
+// === / Discovery ===
+
+// === Contact Us ===
+.contact_us {
+    min-height: 100vh;
+    background-color: $color-black;
+}
+.form-control {
+    background-color: $bg-gray;
+    border: none;
+    border-radius: 0;
+    &:focus {
+        color: #495057;
+        background-color: $bg-gray;
+        border: none;
+        outline: 0;
+        box-shadow: none;
+    }
+}
+.btn-primary {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 0;
+    &:hover {
+        background-color: $icon-red;
+    }
+}
+.form-label {
+    @extend .text-main;
+    color: $color-white;
+}
+.textarea {
+    width: 100%;
+    height: 100px;
+}
+.submit {
+    margin-left: 15px;
+}
+
+// === / Contact Us ===
+
+// === Footer ===
+.card-header {
+    display: flex;
+    justify-content: center;
+
+}
+.footer{
+    &-header{
+        @include upper;
+        color: $color-white;
+        @include shadow-text;
+        padding-right: 10px;
+        margin: 10px 0;
+        font-weight: 500;
+        line-height: 1.1;
+    }
+}
+.icon {
+    border-radius: 6px;
+    display: block;
+    &-arrow {
+       
+        font-size: 23px;
+    }
+    &-block {
+        margin: 10px 0;
+        background-color: $color-gray;
+        height: 100%;
+        
+
+    }
+}
+// === / Footer ===

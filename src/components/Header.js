@@ -2,47 +2,25 @@
 /* eslint-disable react/jsx-no-target-blank */
 import React, { Component } from 'react';
 import logo from '../images/logo.png'
-import { Container, Row, Col, Nav } from 'react-bootstrap';
+import { Container, Row, Col, Nav} from 'react-bootstrap';
+import HeaderNav from './HeaderNav';
+import {TinyButton as ScrollUpButton} from "react-scroll-up-button"; 
 export default class Header extends Component {
   render() {
    
     return (
       <React.Fragment>
-          <div id="home" className='header'>
+          <div id="Home" className='header'>
 
           <Row className="justify-content-md-center header-nav">
     <Col xs lg="2">
     <img src={logo} alt={"logo"}/> 
     </Col>
-    <Col md="auto" lg="8"> 
+    <Col md="auto" lg="8" className="hide"> 
     <Nav className="justify-content-center" activeKey="/home">
-   
-    <Nav.Item>
-      <Nav.Link href="/home">home</Nav.Link>
-    </Nav.Item>
-    <Nav.Item>
-      <Nav.Link eventKey="link-1">services</Nav.Link>
-    </Nav.Item>
-    <Nav.Item>
-      <Nav.Link eventKey="link-2">experience</Nav.Link>
-    </Nav.Item>
-    <Nav.Item>
-      <Nav.Link eventKey="link-3">our team</Nav.Link>
-    </Nav.Item>
-    <Nav.Item>
-      <Nav.Link eventKey="link-4">pricing</Nav.Link>
-    </Nav.Item>
-    <Nav.Item>
-      <Nav.Link eventKey="link-5">portfolio</Nav.Link>
-    </Nav.Item>
-    <Nav.Item>
-      <Nav.Link eventKey="link-6">shop</Nav.Link>
-    </Nav.Item>
-    <Nav.Item>
-      <Nav.Link eventKey="link-7">contact us</Nav.Link>
-    </Nav.Item>
-   
-  </Nav>
+    <HeaderNav/>
+    </Nav>
+    
   </Col>
  
   </Row>
@@ -59,6 +37,9 @@ export default class Header extends Component {
 
 </Container>
 </div>
+<div>
+        <ScrollUpButton />
+      </div>
       </React.Fragment>
     );
   }

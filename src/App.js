@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Header from './components/Header';
 import Experience from './components/Experience';
-import Resume from './components/Resume';
+// import HeaderNav from './components/HeaderNav';
 import Portfolio from './components/Portfolio';
 import Testimonials from  './components/Testimonials';
 import ContactUs from './components/ContactUs';
@@ -14,9 +14,9 @@ class App extends Component {
       <div className="App">
         <Header />
         <Experience />
-        <Resume />
-        <Portfolio />
         <Testimonials />
+        {/* <HeaderNav /> */}
+        <Portfolio />
         <ContactUs />
         <Footer />
       </div>
