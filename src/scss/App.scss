@@ -1,49 +1,57 @@
+// === Fonts ===
+
 @mixin font-face($font-name, $font-path, $font-weight, $font-style) {
     @font-face {
-      font-family: $font-name;
-      src: url(#{$font-path});
-      font-weight: $font-weight;
-      font-style: $font-style;
+        font-family: $font-name;
+        src: url(#{$font-path});
+        font-weight: $font-weight;
+        font-style: $font-style;
     }
-  }
-  @font-face {
+}
+
+@font-face {
     font-family: MyFont;
-    src: url(../fonts/Bebas.ttf) /* TTF file for CSS3 browsers */
-   }
-   @font-face {
-       font-family: Open;
-       src: url(../fonts/OpenSans-Light.ttf)
-   }
-@import 'normalize.scss';
+    src: url(../fonts/Bebas.ttf)
+}
+
+@font-face {
+    font-family: Open;
+    src: url(../fonts/OpenSans-Light.ttf)
+}
+
+// ===/Fonts ===
 
 // === Mixins ===
-
 
 @mixin color-nav {
     background-color: #1D1D1D;
     opacity: .9;
 }
+
 @mixin upper {
     text-transform: uppercase;
 }
+
 @mixin flex-center {
     display: flex;
     align-items: center;
     flex-direction: column;
 }
+
 @mixin main-header {
     text-align: center;
     font-size: 104px;
     font-weight: 800;
     letter-spacing: 6px;
-    
 }
+
 @mixin parallax {
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover; 
+    background-size: cover;
 }
+
 @mixin shadow-text {
     text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
 }
@@ -51,6 +59,7 @@
 // === / Mixins ===
 
 // === Variables ===
+
 $icon-blue: #5ecae6;
 $icon-green: #bed431;
 $icon-yellow: #f6c715;
@@ -63,227 +72,118 @@ $color-red: #fe4419;
 $bg-gray: #222222;
 $main-text: #ccc;
 
-$discovery-colors: (
- flask           : $icon-blue,
- phone           : $icon-green,
- skull           : $icon-yellow,
- desktop         : $icon-red
-);
+$discovery-colors: (flask : $icon-blue,
+    phone : $icon-green,
+    skull : $icon-yellow,
+    desktop : $icon-red);
+
 // === / Variables ===
+//=== Globals ===
 * {
     box-sizing: border-box;
-    font-family:"MyFont";
+    font-family: "MyFont";
 }
+
 h1 {
-    font-family:"MyFont";
+    font-family: "MyFont";
     @include upper;
     text-align: center;
     font-weight: 600;
 }
+
 section {
-   min-height: 100vh;
+    min-height: 100vh;
 }
+
 .red {
     background-color: $color-red;
 }
-.header{
-    background-image: url('../images/header-background.jpg');
-    @include parallax;
-    
-    text-align: center;
-    @include upper;
-    &-nav{
-        @include color-nav;
-        position: fixed;
-        width: 100vw;
-        z-index: 50;
-        border-top: 4px solid #4f4f4f;
-        height: 75px;
-        align-items: center;
-    }
-    .nav-item a {
-        color: $color-gray;
-        padding: 20px 20px 15px;
-        font-size: 18px;
-        display: block;
-        font-weight: 300;
-    }
-    @media screen and (max-width:900px) { 
-        .hide {
-            display: none;
-        }
-    }
-    h2{
-        font-family:"MyFont";
-        @include upper;
-        font-weight: 800;
-        letter-spacing: 6px;
-        color: $color-white;
-        text-align: center;
-        font-size: 2em;
-        color: $color-white;
-        @include shadow-text;
-    }
-    h1 {
-        
-        padding: 0 20px;
-        margin: 0 0 40px;
-        @include shadow-text;
-        @include main-header;
-        color: $color-white;
-    }
+
+.display-f {
+    display: flex;
 }
+
 .lotto {
     min-height: 100vh;
     @include flex-center;
 }
-// === Experience ===
-.experience {
-    min-height: 100vh;
-    background-color: $color-black;
-    display: flex;
-    flex-direction: column;
-    
-    
-    &-img {
-     display: flex;   
-     padding: 25px 0 0;
-    }
-}
-.vh {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-   
-}
-.heading-main, .heading-second {
-    color: $color-white;
-    font-family:"MyFont";
-    text-align: center;
-}
-.heading-main {
-    color: $color-yellow;
-    @include main-header;
-    &--red {
-        color: $color-red;
 
-    }
-}
-    .heading-second {
-        color: $main-text;
-        font-size: 22px;
-        letter-spacing: 3px;
-        font-weight: 700;
-    }
 .text-main {
     text-align: center;
     color: $main-text;
     padding: 25px 0 0;
-   font-family: "Open";
-   font-size: 14px;
-   line-height: 30px;
+    font-family: "Open";
+    font-size: 14px;
+    line-height: 30px;
 }
 
-// ===/Experience ===
+.vh {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
 
-// === Discovery ===
-
-.discovery {
-    background-color: $bg-gray;
-    color: $color-gray;
+.heading-main,
+.heading-second {
+    color: $color-white;
+    font-family: "MyFont";
     text-align: center;
-    &-header {
-        @each $theme, $color in $discovery-colors {
-            &--#{$theme} {
-              color: $color;
-            }
-        }
-
-    }
-    &-icon {
-       
-        @each $theme, $color in $discovery-colors {
-            &--#{$theme} {
-              color: $color;
-              font-size: 42px;
-              margin: 30px 0 0 0;
-            }
-        }
-
-    }
-
 }
-// === / Discovery ===
 
-// === Contact Us ===
-.contact_us {
-    min-height: 100vh;
-    background-color: $color-black;
+.heading-main {
+    color: $color-yellow;
+    @include main-header;
+
+    &--red {
+        color: $color-red;
+    }
+}
+
+.heading-second {
+    color: $main-text;
+    font-size: 22px;
+    letter-spacing: 3px;
+    font-weight: 700;
 }
 .form-control {
     background-color: $bg-gray;
     border: none;
     border-radius: 0;
     &:focus {
-        color: #495057;
-        background-color: $bg-gray;
-        border: none;
-        outline: 0;
-        box-shadow: none;
+      color: #495057;
+      background-color: $bg-gray;
+      border: none;
+      outline: 0;
+      box-shadow: none;
     }
-}
-.btn-primary {
+  }
+  .btn-primary {
     padding: 12px 30px;
     border: none;
     border-radius: 0;
     &:hover {
-        background-color: $icon-red;
+      background-color: $icon-red;
     }
+  }
+
+.font_secondary {
+    font-family: "MyFont";
+    @include upper;
+    font-weight: 800;
+    letter-spacing: 6px;
+    color: $color-white;
+    text-align: center;
+    font-size: 2em;
+    color: $color-white;
+    @include shadow-text;
 }
-.form-label {
-    @extend .text-main;
+
+.font_primary {
+    padding: 0 20px;
+    margin: 0 0 40px;
+    @include shadow-text;
+    @include main-header;
     color: $color-white;
 }
-.textarea {
-    width: 100%;
-    height: 100px;
-}
-.submit {
-    margin-left: 15px;
-}
 
-// === / Contact Us ===
-
-// === Footer ===
-.card-header {
-    display: flex;
-    justify-content: center;
-
-}
-.footer{
-    &-header{
-        @include upper;
-        color: $color-white;
-        @include shadow-text;
-        padding-right: 10px;
-        margin: 10px 0;
-        font-weight: 500;
-        line-height: 1.1;
-    }
-}
-.icon {
-    border-radius: 6px;
-    display: block;
-    &-arrow {
-       
-        font-size: 23px;
-    }
-    &-block {
-        margin: 10px 0;
-        background-color: $color-gray;
-        height: 100%;
-        
-
-    }
-}
-// === / Footer ===
+// === /Globals ===

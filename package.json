@@ -7,8 +7,9 @@
     "@fortawesome/free-solid-svg-icons": "^5.11.2",
     "@fortawesome/react-fontawesome": "^0.1.6",
     "google-map-react": "^1.1.5",
-    "react": "^16.10.1",
-    "react-dom": "^16.10.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
     "react-scripts": "3.1.2",
     "react-scroll-up-button": "^1.6.4"
   },

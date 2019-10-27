@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
-import Header from './components/Header';
-import Experience from './components/Experience';
-// import HeaderNav from './components/HeaderNav';
-import Portfolio from './components/Portfolio';
-import Testimonials from  './components/Testimonials';
-import ContactUs from './components/ContactUs';
-import Footer from './components/Footer';
-
+import Header from './components/_Header/Header';
+import Experience from './components/_Experience/Experience';
+import Portfolio from './components/_Portfolio/Portfolio';
+import Testimonials from './components/_Testimonials/Testimonials';
+import ContactUs from './components/_ContactUs/ContactUs';
+import Footer from './components/_Footer/Footer';
 
 class App extends Component {
   render() {
@@ -15,7 +13,6 @@ class App extends Component {
         <Header />
         <Experience />
         <Testimonials />
-        {/* <HeaderNav /> */}
         <Portfolio />
         <ContactUs />
         <Footer />

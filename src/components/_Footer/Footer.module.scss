@@ -1,0 +1,29 @@
+@import "../../scss/App.scss";
+// === Footer ===
+.card_header {
+  display: flex;
+  justify-content: center;
+}
+.header {
+  @include upper;
+  color: $color-white;
+  @include shadow-text;
+  padding-right: 10px;
+  margin: 10px 0;
+  font-weight: 900;
+  line-height: 1.1;
+}
+
+.icon {
+  border-radius: 6px;
+  display: block;
+  &_arrow {
+    font-size: 23px;
+  }
+  &_block {
+    margin: 10px 0;
+    background-color: $color-gray;
+    height: 100%;
+  }
+}
+// === / Footer ===
