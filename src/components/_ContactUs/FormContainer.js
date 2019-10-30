@@ -3,6 +3,7 @@ import Input from "./elements/Input";
 import TextArea from "./elements/TextArea";
 import Button from "./elements/Button";
 import { Row, Col } from "react-bootstrap";
+import style from "./ContactUs.module.scss";
 
 class FormContainer extends Component {
     constructor(props) {
