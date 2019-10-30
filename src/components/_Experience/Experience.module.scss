@@ -1,0 +1,15 @@
+@import "../../scss/App.scss";
+
+// === Experience ===
+.experience {
+  min-height: 100vh;
+  background-color: $color-black;
+  display: flex;
+  flex-direction: column;
+
+  .img {
+    display: flex;
+    padding: 25px 0 0;
+  }
+}
+// ===/Experience ===

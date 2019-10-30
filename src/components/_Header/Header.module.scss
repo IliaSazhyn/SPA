@@ -1,0 +1,36 @@
+@import '../../scss/App.scss';
+
+// === Header ===
+.header {
+    background-image: url('../../images/header-background.jpg');
+    @include parallax;
+    text-align: center;
+    @include upper;
+}
+
+.nav {
+    @include color-nav;
+    position: fixed;
+    width: 100vw;
+    z-index: 50;
+    border-top: 4px solid #4f4f4f;
+    height: 75px;
+    align-items: center;
+}
+
+.nav_item a {
+    color: $color-gray;
+    padding: 20px 20px 15px;
+    font-size: 18px;
+    display: block;
+    font-weight: 300;
+}
+
+@media screen and (max-width:900px) {
+    .hide {
+        display: none;
+    }
+}
+
+
+// ===/Header ===

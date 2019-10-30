@@ -1,0 +1,12 @@
+@import "../../scss/App.scss";
+
+// === Contact Us ===
+.contact_us {
+  min-height: 100vh;
+  background-color: $color-black;
+}
+.form_label {
+  @extend .text-main;
+  color: $color-white;
+}
+// === / Contact Us ===
