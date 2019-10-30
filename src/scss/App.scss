@@ -91,7 +91,7 @@ h1 {
     font-weight: 600;
 }
 
-section {
+.Container {
     min-height: 100vh;
 }
 
@@ -134,7 +134,7 @@ section {
     color: $color-yellow;
     @include main-header;
 
-    &--red {
+    &__red {
         color: $color-red;
     }
 }
